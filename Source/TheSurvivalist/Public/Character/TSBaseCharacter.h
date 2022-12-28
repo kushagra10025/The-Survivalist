@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "TSBaseCharacter.generated.h"
 
+class UInputMappingContext;
+class UCameraComponent;
+
 UCLASS()
 class THESURVIVALIST_API ATSBaseCharacter : public ACharacter
 {
@@ -18,6 +21,11 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput")
+	TObjectPtr<UInputMappingContext> PlayerMovementMappingContext;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="BaseCharacter|Camera")
+	TObjectPtr<UCameraComponent> FirstPersonCamera;
 
 private:
 

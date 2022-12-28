@@ -3,10 +3,14 @@
 
 #include "Character/TSBaseCharacter.h"
 
+#include "Camera/CameraComponent.h"
+
 ATSBaseCharacter::ATSBaseCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FirstPersonCamera->SetupAttachment(RootComponent);
 }
 
 void ATSBaseCharacter::Tick(float DeltaTime)

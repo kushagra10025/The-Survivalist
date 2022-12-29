@@ -10,6 +10,7 @@
 class UInputMappingContext;
 class UInputAction;
 class UCameraComponent;
+class UISACInteractionTrace;
 
 UCLASS()
 class THESURVIVALIST_API ATSBaseCharacter : public ACharacter
@@ -43,8 +44,12 @@ protected:
 	void TurnRight(const FInputActionValue& Value);
 	
 private:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="BaseCharacter|ActorComponents", meta=(AllowPrivateAccess=True))
+	TObjectPtr<UISACInteractionTrace> InteractionTrace;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="BaseCharacter|Camera", meta=(AllowPrivateAccess=True))
 	TObjectPtr<UCameraComponent> FirstPersonCamera;
+
+	void SetupInteractionTrace() const;
 public:	
 	
 };

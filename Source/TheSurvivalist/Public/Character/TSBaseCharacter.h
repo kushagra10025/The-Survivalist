@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InputActionValue.h"
 #include "TSBaseCharacter.generated.h"
 
 class UInputMappingContext;
+class UInputAction;
 class UCameraComponent;
 
 UCLASS()
@@ -22,13 +24,27 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Contexts")
 	TObjectPtr<UInputMappingContext> PlayerMovementMappingContext;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="BaseCharacter|Camera")
-	TObjectPtr<UCameraComponent> FirstPersonCamera;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Actions")
+	TObjectPtr<UInputAction> MoveForwardsAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Actions")
+	TObjectPtr<UInputAction> MoveSidewaysAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Actions")
+	TObjectPtr<UInputAction> TurnRightAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Actions")
+	TObjectPtr<UInputAction> LookUpAction;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="BaseCharacter|EnhancedInput|Actions")
+	TObjectPtr<UInputAction> JumpAction;
 
+	void MoveForwards(const FInputActionValue& Value);
+	void MoveSideways(const FInputActionValue& Value);
+	void LookUp(const FInputActionValue& Value);
+	void TurnRight(const FInputActionValue& Value);
+	
 private:
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="BaseCharacter|Camera", meta=(AllowPrivateAccess=True))
+	TObjectPtr<UCameraComponent> FirstPersonCamera;
 public:	
 	
 };

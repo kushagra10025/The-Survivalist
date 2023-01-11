@@ -1,0 +1,62 @@
+{
+	"packageData":
+	{
+		"/Game/Blueprints/BP_HRCopterPawn":
+		{
+			"graphData":
+			{
+				"3F4897AF4AE1DB6E88502FA37C95C252":
+				{
+					"commentData":
+					{
+						"D37E27BE4426A7E7D7E14BB9BC3C294E":
+						{
+							"nodeGuids": [
+								"A0A170EC47BCB916D774CA86EC261C1C",
+								"3D18345A4CC8883CFF1A92A86C2AA025",
+								"C14DD9DB4B16681C3F91FD96EABBDDCD",
+								"52B8055D4738DDB1B081EB91F21AEC3C",
+								"6E203419465AB87448FF5F91D47D3D48",
+								"46F35EEE4856D26DC516AA99341A033D",
+								"89A3FF0843ED94E8CBB6669B2F2E557C",
+								"82489991430DEA3F8A50B39BF47B2303"
+							],
+							"bHeader": 0,
+							"bInit": 1
+						},
+						"9A42E83F401F7CBEF4F4A383863A6508":
+						{
+							"nodeGuids": [
+								"2E35759E45298E5B4F9461934DC5364B",
+								"43CA42B141D5902B6A6ACDABAE8F55F1",
+								"92867D814403D295708A05B36DB13648",
+								"4BA80E194B3D861983EF5AAEE93208DB"
+							],
+							"bHeader": 0,
+							"bInit": 1
+						},
+						"AD00CF91497B644D49B3D1B512FD5506":
+						{
+							"nodeGuids": [
+								"4EECCEE54859F01DE084B19DA8C4152D",
+								"87F5D9384CE69B7D45E332B4549D8E45",
+								"D5C3894D44B68DE850564F8DB8299D7D"
+							],
+							"bHeader": 0,
+							"bInit": 1
+						},
+						"173AECB64F6EA8487F0E048AACBC74A4":
+						{
+							"nodeGuids": [
+								"BB2769484A9BCD219D92ECAA64AF9170",
+								"F60B82E74574FA4F785FD49207932EBB"
+							],
+							"bHeader": 0,
+							"bInit": 1
+						}
+					}
+				}
+			}
+		}
+	}
+}

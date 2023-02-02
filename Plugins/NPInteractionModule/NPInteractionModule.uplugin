@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "NPInteractionModule",
+	"Description": "Highly Extensible and Robust Interaction System Module",
+	"Category": "Other",
+	"CreatedBy": "Kushagra",
+	"CreatedByURL": "https://kushagra10025.github.io",
+	"DocsURL": "https://kushagra10025.github.io/npegm/docs/",
+	"MarketplaceURL": "",
+	"SupportURL": "https://kushagra10025.github.io/npegm/",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "NPInteractionModule",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

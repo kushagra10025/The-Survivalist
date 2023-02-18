@@ -6,13 +6,10 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
-#include "InteractionSystem/ISACInteractionTrace.h"
 
 ATSBaseCharacter::ATSBaseCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
-	InteractionTrace = CreateDefaultSubobject<UISACInteractionTrace>(TEXT("InteractionTrace"));
 	
 	FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCamera->SetupAttachment(RootComponent);
@@ -60,9 +57,6 @@ void ATSBaseCharacter::BeginPlay()
 			Subsystem->AddMappingContext(PlayerMovementMappingContext, 0);
 		}
 	}
-
-	// Setup Interaction Trace
-	SetupInteractionTrace();
 }
 
 void ATSBaseCharacter::MoveForwards(const FInputActionValue& Value)
@@ -83,12 +77,4 @@ void ATSBaseCharacter::LookUp(const FInputActionValue& Value)
 void ATSBaseCharacter::TurnRight(const FInputActionValue& Value)
 {
 	AddControllerYawInput(Value.Get<float>());
-}
-
-void ATSBaseCharacter::SetupInteractionTrace() const
-{
-	if(IsLocallyControlled())
-	{
-		InteractionTrace->SetComponentTickEnabled(true);
-	}
 }
